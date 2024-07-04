@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.dto.UserDTO;
 import com.example.exception.ResourceNotFoundException;
 import com.example.service.UserService;
-import com.example.service.impl.UserServiceInterface;
+import com.example.service.impl.UserServiceImpl;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 public class UserController {
 
 	@Autowired
-	UserServiceInterface userService;
+	UserService userService;
 
 	@PostMapping(path = "/CSRData", consumes = "application/json", produces = "application/json")
 	public ResponseEntity<String> saveRequestForCA(@RequestBody UserDTO user)
